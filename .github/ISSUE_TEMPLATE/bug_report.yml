@@ -1,0 +1,86 @@
+name: Bug report
+description: Report a reproducible problem in this repository.
+title: "[Bug]: "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Each interop-platform repository tracks its own issues: file this where the fix lands. This repository is
+        public: never include client names or data, internal hostnames, credentials, or links to private systems.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened?
+      placeholder: Briefly describe the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reliable reproduction you can, including the configuration involved.
+      placeholder: |
+        1. Configure ...
+        2. Run ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: What should have happened? Describe it in plain words.
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: What happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Where did it happen?
+      placeholder: |
+        - Commit, branch, or build:
+        - Component or module:
+        - Operating system and version:
+        - Runtime and versions (JDK, Node, database):
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Paste the relevant execution log or error. Redact tokens, credentials, personal identifiers, and client data.
+      render: shell
+    validations:
+      required: false
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: How severe is this problem?
+      options:
+        - Blocks a core workflow
+        - Produces wrong results or exposes data
+        - Degrades a workflow, with a workaround
+        - Minor issue
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: This is not a security vulnerability (report those privately, following SECURITY.md in interop-platform/.github).
+          required: true
